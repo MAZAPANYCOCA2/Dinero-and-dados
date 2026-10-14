@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Windows Vista - Mazapanycoca</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ ICONOS (sprite SVG, estilo Vista) ============ -->
+<svg id="sprite" width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+  <linearGradient id="gYel1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6cd62"/><stop offset="1" stop-color="#d4961c"/></linearGradient>
+  <linearGradient id="gYel2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff2b8"/><stop offset=".5" stop-color="#f8c94c"/><stop offset="1" stop-color="#e2a22a"/></linearGradient>
+  <linearGradient id="gPage" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#d3deea"/></linearGradient>
+  <radialGradient id="gBlue" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#a9e8ff"/><stop offset=".45" stop-color="#1f86f5"/><stop offset="1" stop-color="#0a2f9c"/></radialGradient>
+  <radialGradient id="gLime" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#f5ffc0"/><stop offset=".45" stop-color="#98e61c"/><stop offset="1" stop-color="#2a8f0c"/></radialGradient>
+  <radialGradient id="gOrange" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#ffe9b0"/><stop offset=".45" stop-color="#ff9a1f"/><stop offset="1" stop-color="#b94505"/></radialGradient>
+  <linearGradient id="gSilver" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#aab8cb"/><stop offset=".6" stop-color="#f4f8fc"/><stop offset="1" stop-color="#8497b0"/></linearGradient>
+  <linearGradient id="gScreen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fd0ff"/><stop offset=".55" stop-color="#1b6fe0"/><stop offset="1" stop-color="#0a3fb0"/></linearGradient>
+  <linearGradient id="gGloss" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity=".05"/></linearGradient>
+  <linearGradient id="gSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5cb9ff"/><stop offset="1" stop-color="#d9f3ff"/></linearGradient>
+  <linearGradient id="gHill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9be54f"/><stop offset="1" stop-color="#3a9a1c"/></linearGradient>
+
+  <!-- carpeta -->
+  <symbol id="i-folder-back" viewBox="0 0 48 48"><path d="M3 9a2 2 0 0 1 2-2h13l4 4h21a2 2 0 0 1 2 2v26a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" fill="url(#gYel1)" stroke="#a8730f"/></symbol>
+  <symbol id="i-folder-front" viewBox="0 0 48 48"><path d="M3 20a2 2 0 0 1 2-2h38a2 2 0 0 1 2 2v21a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" fill="url(#gYel2)" stroke="#b9831a"/><path d="M4.5 21h39" stroke="#fff" stroke-opacity=".85"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 48 48"><use href="#i-folder-back"/><rect x="6" y="13" width="36" height="9" fill="#fff" opacity=".92"/><use href="#i-folder-front"/></symbol>
+  <symbol id="g-note" viewBox="0 0 48 48"><path d="M19 32V17l12-3v14" stroke="#fff" stroke-width="3" fill="none" stroke-linejoin="round"/><circle cx="15.8" cy="32.4" r="4" fill="#fff"/><circle cx="27.8" cy="29.4" r="4" fill="#fff"/></symbol>
+  <symbol id="i-folder-music" viewBox="0 0 48 48"><use href="#i-folder"/><circle cx="33" cy="33" r="10" fill="url(#gBlue)" stroke="#0a2f9c" stroke-width="1"/><use href="#g-note" x="23" y="23" width="20" height="20"/></symbol>
+  <symbol id="i-folder-pics" viewBox="0 0 48 48"><use href="#i-folder"/><rect x="21" y="25" width="21" height="16" rx="2" fill="#fff" stroke="#6b7d95"/><rect x="23" y="27" width="17" height="12" fill="url(#gSky)"/><path d="M23 39l5-6 3 3 3-4 6 7z" fill="url(#gHill)"/><circle cx="36" cy="30.5" r="1.8" fill="#ffd64a"/></symbol>
+  <!-- archivos -->
+  <symbol id="i-page" viewBox="0 0 48 48"><path d="M10 3h20l9 9v31a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" fill="url(#gPage)" stroke="#8394aa"/><path d="M30 3v9h9" fill="#c8d4e3" stroke="#8394aa"/></symbol>
+  <symbol id="i-audio" viewBox="0 0 48 48"><use href="#i-page"/><circle cx="23" cy="30" r="11.5" fill="url(#gBlue)" stroke="#0a2f9c"/><use href="#g-note" x="13" y="20" width="20" height="20"/><ellipse cx="21" cy="24.5" rx="7" ry="3.5" fill="#fff" opacity=".45"/></symbol>
+  <symbol id="i-audio-demo" viewBox="0 0 48 48" opacity=".55"><use href="#i-page"/><circle cx="23" cy="30" r="11.5" fill="#aab8cb" stroke="#6b7d95" stroke-dasharray="3 2"/><use href="#g-note" x="13" y="20" width="20" height="20"/></symbol>
+  <symbol id="i-image" viewBox="0 0 48 48"><use href="#i-page"/><rect x="12" y="19" width="24" height="18" fill="url(#gSky)" stroke="#5f7089"/><path d="M12 37l7-9 5 5 5-7 7 11z" fill="url(#gHill)"/><circle cx="31" cy="24" r="2.6" fill="#ffd64a"/></symbol>
+  <symbol id="i-text" viewBox="0 0 48 48"><use href="#i-page"/><path d="M14 19h20M14 24h20M14 29h20M14 34h12" stroke="#6f86a8" stroke-width="1.6"/></symbol>
+  <symbol id="i-playlist" viewBox="0 0 48 48"><use href="#i-page"/><path d="M14 18h14M14 23h12M14 28h10" stroke="#6f86a8" stroke-width="1.6"/><circle cx="32" cy="33" r="8.5" fill="url(#gLime)" stroke="#2a8f0c"/><path d="M29.5 29l7 4-7 4z" fill="#fff"/></symbol>
+  <symbol id="i-dead" viewBox="0 0 48 48"><use href="#i-page"/><path d="M15 22l18 14M33 22L15 36" stroke="#b9c4d3" stroke-width="2"/></symbol>
+  <!-- sistema -->
+  <symbol id="i-computer" viewBox="0 0 48 48"><rect x="5" y="6" width="38" height="27" rx="3" fill="url(#gSilver)" stroke="#5f7089"/><rect x="8.5" y="9.5" width="31" height="20" rx="1.5" fill="url(#gScreen)" stroke="#0a2e80"/><path d="M9 10.5h30v7.5Q24 22 9 16z" fill="#fff" opacity=".35"/><path d="M19 33h10l2 5H17z" fill="#aab8cb" stroke="#5f7089"/><rect x="11" y="38" width="26" height="4.5" rx="2.2" fill="url(#gSilver)" stroke="#5f7089"/></symbol>
+  <symbol id="i-disk" viewBox="0 0 48 48"><rect x="4" y="15" width="40" height="21" rx="3" fill="url(#gSilver)" stroke="#5a6b84"/><rect x="8" y="22" width="26" height="4.5" rx="1" fill="#2d3d56"/><circle cx="39" cy="30" r="2.2" fill="#7ee33a" stroke="#2a7a10" stroke-width=".6"/><rect x="5" y="16" width="38" height="7" rx="3" fill="#fff" opacity=".45"/><rect x="8" y="36" width="32" height="3" rx="1.5" fill="#0006" opacity=".25"/></symbol>
+  <symbol id="i-cd" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20.5" fill="url(#gSilver)" stroke="#5a6b84"/><path d="M24 24L44 24A20 20 0 0 0 36 7.5z" fill="#ff4fa0" opacity=".28"/><path d="M24 24L36 7.5A20 20 0 0 0 12 7.5z" fill="#33d6ff" opacity=".3"/><path d="M24 24L12 7.5A20 20 0 0 0 4 24z" fill="#b6ff2a" opacity=".28"/><circle cx="24" cy="24" r="6.5" fill="#eef4fb" stroke="#5a6b84"/><circle cx="24" cy="24" r="2.3" fill="#5a6b84"/><ellipse cx="17" cy="13" rx="10" ry="4.5" fill="#fff" opacity=".55" transform="rotate(-32 17 13)"/></symbol>
+  <symbol id="i-recycle" viewBox="0 0 48 48"><path d="M11 15h26l-2.5 27a2 2 0 0 1-2 1.8H15.5a2 2 0 0 1-2-1.8z" fill="#cfe9ff" fill-opacity=".75" stroke="#5c85b3"/><path d="M16 19l1.5 20M24 19v20M32 19l-1.5 20" stroke="#5c85b3" stroke-opacity=".45"/><rect x="8" y="10" width="32" height="5" rx="2" fill="url(#gSilver)" stroke="#5c85b3"/><path d="M17.5 31a7 7 0 0 1 11-6.5" stroke="#2da91c" stroke-width="3" fill="none"/><path d="M30.5 22l.6 6.6-6.2-1.5z" fill="#2da91c"/><path d="M30.5 33a7 7 0 0 1-11-1" stroke="#2da91c" stroke-width="3" fill="none"/></symbol>
+  <symbol id="i-recycle-full" viewBox="0 0 48 48"><path d="M13 9l5-4 5 3 4-3 6 5z" fill="#fff" stroke="#9aa8ba"/><path d="M16 11l8-2 9 3z" fill="#e6eef7" stroke="#9aa8ba"/><use href="#i-recycle"/></symbol>
+  <symbol id="i-player" viewBox="0 0 48 48"><circle cx="24" cy="24" r="21" fill="url(#gBlue)" stroke="#06267a" stroke-width="1.5"/><path d="M12 28v-4a12 12 0 0 1 24 0v4" stroke="#fff" stroke-width="3" fill="none" opacity=".9"/><rect x="9.5" y="26" width="6" height="10" rx="3" fill="#fff"/><rect x="32.5" y="26" width="6" height="10" rx="3" fill="#fff"/><path d="M20.5 20l9 5.5-9 5.5z" fill="#b6ff2a" stroke="#2a8f0c" stroke-width=".8"/><ellipse cx="24" cy="12" rx="15" ry="8" fill="url(#gGloss)" opacity=".75"/></symbol>
+  <symbol id="i-vis" viewBox="0 0 48 48"><circle cx="24" cy="24" r="21" fill="url(#gLime)" stroke="#1b6a05" stroke-width="1.5"/><path d="M24 7c1.3 10 3.7 13 15 17-11.3 4-13.7 7-15 17-1.3-10-3.7-13-15-17C20.3 20 22.7 17 24 7z" fill="#fff" stroke="#1f6b0a" stroke-width=".8"/><ellipse cx="24" cy="12" rx="15" ry="8" fill="url(#gGloss)" opacity=".7"/></symbol>
+  <symbol id="i-notepad" viewBox="0 0 48 48"><rect x="9" y="7" width="31" height="37" rx="3" fill="#2d7ff0" stroke="#0b3c9e"/><rect x="13" y="12" width="23" height="29" fill="#fff"/><path d="M16 19h17M16 24h17M16 29h17M16 34h10" stroke="#8aa3c4"/><g fill="#e1e9f3" stroke="#5f7089" stroke-width=".8"><rect x="13" y="4" width="3.4" height="8" rx="1.7"/><rect x="19" y="4" width="3.4" height="8" rx="1.7"/><rect x="25" y="4" width="3.4" height="8" rx="1.7"/><rect x="31" y="4" width="3.4" height="8" rx="1.7"/></g></symbol>
+  <symbol id="i-photo" viewBox="0 0 48 48"><rect x="4" y="9" width="40" height="30" rx="4" fill="#e8eef6" stroke="#5f7089"/><rect x="8" y="13" width="32" height="22" fill="url(#gSky)" stroke="#2f5d99"/><path d="M8 35l10-12 7 7 7-9 8 14z" fill="url(#gHill)"/><circle cx="33" cy="19.5" r="3.2" fill="#ffd64a"/></symbol>
+  <symbol id="i-user" viewBox="0 0 48 48"><rect x="1" y="1" width="46" height="46" rx="8" fill="url(#gBlue)" stroke="#06267a"/><g transform="rotate(-12 24 24)"><rect x="9" y="9" width="30" height="30" rx="6" fill="#fff" stroke="#8394aa"/><g fill="#111a2c"><circle cx="16" cy="16" r="2.7"/><circle cx="32" cy="16" r="2.7"/><circle cx="24" cy="24" r="2.7"/><circle cx="16" cy="32" r="2.7"/><circle cx="32" cy="32" r="2.7"/></g></g><ellipse cx="24" cy="10" rx="20" ry="8" fill="url(#gGloss)" opacity=".5"/></symbol>
+  <symbol id="i-star" viewBox="-50 -50 100 100"><path d="M0 -50 C4 -12 12 -4 50 0 C12 4 4 12 0 50 C-4 12 -12 4 -50 0 C-12 -4 -4 -12 0 -50Z"/></symbol>
+  <symbol id="i-info" viewBox="0 0 48 48"><circle cx="24" cy="24" r="21" fill="url(#gBlue)" stroke="#06267a"/><rect x="21" y="20" width="6" height="16" rx="2" fill="#fff"/><circle cx="24" cy="14" r="3.4" fill="#fff"/></symbol>
+  <symbol id="i-error" viewBox="0 0 48 48"><circle cx="24" cy="24" r="21" fill="#e03b24" stroke="#7d1608" stroke-width="1.5"/><path d="M15 15l18 18M33 15L15 33" stroke="#fff" stroke-width="5" stroke-linecap="round"/><ellipse cx="24" cy="12" rx="15" ry="8" fill="url(#gGloss)" opacity=".6"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 32 32"><path d="M3 6c4-2.4 7 .6 11-1v9c-4 1.6-7-1.4-11 1z" fill="#ff5a3c"/><path d="M16.5 5c3.4-1.4 6.4-.6 9.5 .6v9c-3.1-1.2-6.1-2-9.5-.6z" fill="#7ee33a"/><path d="M3 16.4c4-2.4 7 .6 11-1v9c-4 1.6-7-1.4-11 1z" fill="#2fa8ff"/><path d="M16.5 15.4c3.4-1.4 6.4-.6 9.5 .6v9c-3.1-1.2-6.1-2-9.5-.6z" fill="#ffd23a"/></symbol>
+  <symbol id="i-desktop" viewBox="0 0 48 48"><rect x="4" y="6" width="40" height="30" rx="3" fill="url(#gScreen)" stroke="#0a2e80"/><path d="M4 8h40v10Q24 24 4 16z" fill="#fff" opacity=".3"/><rect x="14" y="38" width="20" height="4" rx="2" fill="url(#gSilver)" stroke="#5f7089"/></symbol>
+
+  <!-- glifos de interfaz (currentColor) -->
+  <symbol id="g-play" viewBox="0 0 16 16"><path d="M4 2.5l10 5.5-10 5.5z" fill="currentColor"/></symbol>
+  <symbol id="g-pause" viewBox="0 0 16 16"><rect x="3" y="2.5" width="3.8" height="11" rx="1" fill="currentColor"/><rect x="9.2" y="2.5" width="3.8" height="11" rx="1" fill="currentColor"/></symbol>
+  <symbol id="g-stop" viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10" rx="1.5" fill="currentColor"/></symbol>
+  <symbol id="g-prev" viewBox="0 0 16 16"><rect x="2" y="3" width="2.4" height="10" fill="currentColor"/><path d="M14 3v10L5.5 8z" fill="currentColor"/></symbol>
+  <symbol id="g-next" viewBox="0 0 16 16"><rect x="11.6" y="3" width="2.4" height="10" fill="currentColor"/><path d="M2 3v10l8.5-5z" fill="currentColor"/></symbol>
+  <symbol id="g-shuffle" viewBox="0 0 16 16"><path d="M1 4.5h2.6c3 0 4 7 7.4 7H13M1 11.5h2.6c1 0 1.8-.8 2.6-1.9M8.6 6.4c.7-1 1.6-1.9 2.4-1.9H13" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M12.5 2.2L15 4.5l-2.5 2.3zM12.5 9.2L15 11.5l-2.5 2.3z" fill="currentColor"/></symbol>
+  <symbol id="g-repeat" viewBox="0 0 16 16"><path d="M3 8V6.5a2 2 0 0 1 2-2h7M13 8v1.5a2 2 0 0 1-2 2H4" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M11.5 1.8L14.6 4.5l-3.1 2.7zM4.5 8.8L1.4 11.5l3.1 2.7z" fill="currentColor"/></symbol>
+  <symbol id="g-vol" viewBox="0 0 16 16"><path d="M2 6h3l4-3.5v11L5 10H2z" fill="currentColor"/><path d="M11 5.5a3.6 3.6 0 0 1 0 5M12.6 3.5a6.4 6.4 0 0 1 0 9" stroke="currentColor" stroke-width="1.3" fill="none"/></symbol>
+  <symbol id="g-mute" viewBox="0 0 16 16"><path d="M2 6h3l4-3.5v11L5 10H2z" fill="currentColor"/><path d="M11 6l4 4M15 6l-4 4" stroke="currentColor" stroke-width="1.4"/></symbol>
+  <symbol id="g-back" viewBox="0 0 16 16"><path d="M10.5 2.5L5 8l5.5 5.5" stroke="currentColor" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="g-fwd" viewBox="0 0 16 16"><path d="M5.5 2.5L11 8l-5.5 5.5" stroke="currentColor" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="g-up" viewBox="0 0 16 16"><path d="M2.5 10.5L8 5l5.5 5.5" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="g-search" viewBox="0 0 16 16"><circle cx="6.5" cy="6.5" r="4.3" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M10 10l4.5 4.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="g-net" viewBox="0 0 16 16"><rect x="1.5" y="3" width="9" height="6.5" rx="1" fill="currentColor"/><rect x="5.5" y="6.5" width="9" height="6.5" rx="1" fill="currentColor" stroke="#0008" stroke-width=".6"/></symbol>
+  <symbol id="g-shield" viewBox="0 0 16 16"><path d="M8 1.5l5.5 2v4.2c0 3-2.2 5-5.5 6.8C4.7 12.7 2.5 10.7 2.5 7.7V3.5z" fill="currentColor"/></symbol>
+  <symbol id="g-close" viewBox="0 0 16 16"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+</defs>
+</svg>
+
+<!-- ============ PANTALLA DE INICIO DE SESIÓN ============ -->
+<div id="login">
+  <div class="lg-bg"></div>
+  <div class="lg-center">
+    <div class="lg-tile" id="lg-tile" tabindex="0" title="Haz clic para iniciar sesión">
+      <svg viewBox="0 0 48 48"><use href="#i-user"/></svg>
+    </div>
+    <div class="lg-name">Mazapanycoca</div>
+    <div class="lg-pw"><input type="password" value="aaaaaaaa" id="lg-pw" aria-label="Contraseña"><button id="lg-go" title="Iniciar sesión"><svg viewBox="0 0 16 16"><use href="#g-fwd"/></svg></button></div>
+    <div class="lg-hint">Haz clic para iniciar sesión</div>
+  </div>
+  <div class="lg-foot"><b>Windows Vista</b><span>Home Premium</span></div>
+  <div class="lg-welcome" id="lg-welcome">Bienvenido</div>
+</div>
+
+<!-- ============ ESCRITORIO ============ -->
+<div id="desktop">
+  <div id="icons"></div>
+  <div id="sidebar"></div>
+  <div id="wins"></div>
+</div>
+
+<!-- ============ BARRA DE TAREAS ============ -->
+<div id="taskbar">
+  <button id="orb" title="Iniciar"><svg viewBox="0 0 32 32"><use href="#i-flag"/></svg></button>
+  <div id="quick">
+    <button data-q="desktop" title="Mostrar escritorio"><svg viewBox="0 0 48 48"><use href="#i-desktop"/></svg></button>
+    <button data-q="player" title="Reproductor MaZaPlayer"><svg viewBox="0 0 48 48"><use href="#i-player"/></svg></button>
+    <button data-q="vis" title="Visualizador"><svg viewBox="0 0 48 48"><use href="#i-vis"/></svg></button>
+  </div>
+  <div id="tasks"></div>
+  <div id="tray">
+    <div id="tray-icons"></div>
+    <div id="clock" title=""><span id="clk"></span></div>
+  </div>
+</div>
+
+<!-- ============ MENÚ INICIO ============ -->
+<div id="start" aria-hidden="true">
+  <div class="st-cols">
+    <div class="st-left">
+      <div class="st-list" id="st-pinned"></div>
+      <div class="st-sep"></div>
+      <button class="st-all" id="st-all">Todos los programas <span>▸</span></button>
+      <div class="st-allbox" id="st-allbox"></div>
+      <div class="st-search"><svg viewBox="0 0 16 16"><use href="#g-search"/></svg><input id="st-q" placeholder="Iniciar búsqueda" autocomplete="off"></div>
+    </div>
+    <div class="st-right" id="st-right"></div>
+  </div>
+  <div class="st-foot">
+    <button id="st-sleep" title="Apagar">⏻</button>
+    <button id="st-logout">Cerrar sesión</button>
+    <button id="st-off">Apagar</button>
+  </div>
+</div>
+
+<div id="pop"></div>
+<div id="shutdown"><div class="sd-msg" id="sd-msg"></div></div>
+
+<script src="js/spectra.js"></script>
+<script src="js/os.js"></script>
+<script src="js/apps.js"></script>
+</body>
+</html>
